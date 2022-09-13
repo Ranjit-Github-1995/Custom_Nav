@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 15px;
+}
+
+.header{
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aquamarine;
+}
+.header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo{
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+}
+
+.navbar{
+  margin-left: auto;
+}
+.navlist{
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.navmenu{
+  display: inline-block;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.navmenu:hover{
+  color: #fff;
+}
+
+.mobile_nav{
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+.hamburg{
+  width: 4rem;
+  height: 4rem;
+  color: #000;
+}
+.hamburg[name="close-outline"]{
+  display: none;
+}
+
+.main p{
+  font-size: 14px;
+  line-height: 28px;
+  color: #000;
+  font-weight: 500;
+}
+
+@media (max-width: 991px){
+
+  .mobile_nav{
+    display: block;
+  }
+  .hamburg{
+    border: 1px solid #000;
+  }
+  .header{
+    position: relative;
+  }
+  .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(100%);
+    background-color: #fff;
+    pointer-events: none;
+    transition: all 0.5s linear;
+  }
+  .navlist{
+    align-items: center;
+    flex-direction: column;
+  }
+  .active .navbar{
+    pointer-events: all;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .navmenu:hover{
+    color: aqua;
+  }
+  .active .mobile_nav .hamburg[name="close-outline"]{
+    display: block;
+  }
+  .active .mobile_nav .hamburg[name="menu-outline"]{
+    display: none;
+  }
+
+}
